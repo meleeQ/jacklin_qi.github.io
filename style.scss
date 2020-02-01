@@ -1,0 +1,1004 @@
+    @import "common";
+      $myFont: Verdana, Arial, Helvetica, sans-serif; 
+      $myColor:#000;
+      $myFontSize: 16px;
+      $myweight:400px;
+      $myWidth: 1140px;
+      $myHeight:auto;
+      $myMargin:35px auto;
+      $Width_S_I:890px;
+      $Height_S_I:500px;
+      $Width_N:900px;
+      $bgcolor: #bfe3e7;
+      $inbgcolor:#fff;
+      $helcolor:rgb(46, 197, 112);
+      $textcolor: rgb(143, 143, 143);
+      @mixin perspective($property) {
+        -webkit-perspective: $property;
+        perspective:$property; 
+      }
+      @mixin shadow($property) {
+        box-shadow:$property; 
+      }
+      @mixin trangle_l_r {
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-top: 185px solid #bfe3e7;
+      }
+      @mixin skills_d_c {
+        width: 380px;
+        height: 330px;
+        /*是否可行*/
+        text-align: center;
+        border: 1px solid gray;
+        @include shadow(3px -3px 5px -1px #888888);
+      }
+      @mixin myoverflow {
+        overflow-x: hidden;
+        -ms-overflow-x:hidden;
+        overflow-y: auto;
+        -ms-overflow-y:auto;
+      }
+      @mixin myborderstyle {
+        box-shadow: 0 -10px 10px -1px #888888;
+      }
+      @mixin transform($property) {
+        -webkit-transform: $property;
+        transform: $property;
+      }
+      @mixin radius($property) {
+        
+        border-radius: $property;
+        -moz-border-radius:$property;
+        -webkit-border-radius:$property;
+      }
+      @mixin transition($property) {
+        -webkit-transition: $property;
+        transition: $property;
+      }
+      @mixin backface($property) {
+        -webkit-backface-visibility: $property;
+        backface-visibility: $property;
+      }
+      @mixin animation($property) {
+        
+        animation: $property;
+        -moz-animation:$property;
+        -webkit-animation:$property;
+      }
+      @mixin main {
+        width:280px;
+        overflow: auto;
+        height: auto;
+      }
+      
+      body {
+        font-family: $myFont;
+        font-size: $myFontSize;
+        color: $myColor;
+        @include perspective(1500px);
+      }
+      .navbar {
+        background-color: $bgcolor;
+      }
+        .nav_home,
+        .nav_resume,
+        .navbar-brand
+      {
+          width: 3.5em;
+          height: 1.8em;
+        }
+        .navbar-brand .signature {
+          width: 80px;
+          margin-top: -1.2em;
+          height: 50px;
+        }
+        .nav-link {
+            text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;
+          }
+      .center {
+
+        width: $myWidth;
+        height: $myHeight;
+        margin: $myMargin;
+        position: relative;
+      }
+      #left_top {
+        left: 0;
+        top: 0;
+        @include trangle_l_r;
+        border-right: 265px solid transparent;
+      
+      }
+      #right_top {
+        right: 0;
+        top: 0;
+        @include trangle_l_r;
+        border-left: 510px solid transparent;
+      }
+      .main {
+      
+        width: 950px;
+        height: $myHeight;
+        z-index: 2;
+        margin:  $myMargin;
+        background: $inbgcolor;
+        position: absolute;
+        top: 5%;
+        left: 95px;
+        @include myoverflow;
+        @include myborderstyle;
+        
+      }
+      .header {
+          
+        width: $Width_N;
+        height: 300px;
+        margin: 25px;
+        position: relative;
+        background-color:$bgcolor;
+      }
+
+      
+      .myBasic {
+      
+        width: $Width_N;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translate(-50%, -50%));
+        
+      }
+      
+      .myPro {
+        /* 图片宽高*/
+        width: 200px;
+        height: 200px;
+        float: left;
+        margin-left: 10%;
+        display: block;
+        border: #000 solid 2px;
+        @include radius(50%);
+        @include transition(all 2s);
+        background: $helcolor url(./myProfile.jpg) no-repeat center;             
+        background-size: cover;
+        background-position: 55% 25%;
+      
+      }
+      .myPro:hover { 
+        @include transform(rotate(360deg));
+      }
+
+      .sub_header {
+        float: right;
+        margin-top: 5%;
+        margin-right: 18%;
+      }
+
+      .fullname {
+        font-size: 35px;
+        margin-left: .6em;
+      }
+
+      .myIntro .mytitle{
+        font-size: 1.75rem;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+      .myIntro .myStart{
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 550;
+      }
+      .list li {
+        float: left;
+        margin-left: 8px;
+      
+      }
+      .list li .fa {
+        color: rgb(0, 0, 0);
+        font-size: 1.7em;
+      }
+      .myIntro {
+        
+        width: $Width_S_I;
+        height: $Height_S_I;
+        margin: 0 auto;
+        padding: 20px;
+        background: $inbgcolor;
+      }
+      .myContent {
+        text-align: justify;
+      }
+      .table-b {
+        font-size: 1.2em;
+        font-weight: $myweight;
+        color: $textcolor;
+      }
+
+      .keypoint,
+      .info_value_D {
+        color: $bgcolor;
+      }
+
+      /*Second  */
+      .Outline {
+
+        position: relative;
+        height: $myHeight;
+        margin: 20px auto;
+        margin-left: 40px;
+      }
+
+      .outline {
+        width: 884px;
+        height: 600px;
+        margin: 10px;
+        float: left;
+        border-left: 1px solid gray;
+
+      }
+
+      .outline_right {
+        position: absolute;
+        top: 0;
+        left: 488px;
+      }
+
+      .education_right {
+        width: 300px;
+        height: 240px;
+        margin-top: -30px;
+        margin-right: 30px;
+        background: $inbgcolor;
+        border: 1px solid goldenrod;
+      }
+
+      .interval {
+        width: 230px;
+        height: 60px;
+        border-bottom: 2px solid $helcolor;
+      }
+      .outline .education {
+        width: 300px;
+        height: 240px;
+        margin-top: -30px;
+        margin-left: 30px;
+        background: $inbgcolor;
+        border: 1px solid gray;
+        border-left-color:$helcolor;
+        @include shadow(3px -3px 5px -1px #888888)
+      }
+
+      .interval::after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        float: left;
+        background:$inbgcolor;
+        border: 2px solid $helcolor;
+        margin-top: 54px;
+        margin-left: -6px;
+        border-radius: 50%;
+      }
+
+
+      .outline_right>.interval::after {
+        float: right;
+        background: $inbgcolor;
+        border: 2px solid $helcolor;
+        margin-right: 225px;
+        @include radius(50%);
+      }
+      .timeline_item{
+        text-align:left;
+        padding:0.3em;
+
+      }
+      
+      .item_period{
+        color:$helcolor;
+        margin: 0 10px;
+      }
+      .item_description{
+      
+        font-size: 13px;
+        margin: 0 0 10px;
+        font-weight: $myweight;
+        margin: 1px 10px;
+      }
+      .skills {
+
+        
+        width: $Width_S_I;
+        height: $Height_S_I;
+        background: $inbgcolor;
+        margin: 0 auto;
+        margin-top: 850px;
+        padding: 33px;
+      }
+
+      .Design {
+        
+        float: left;
+        padding: 20px;
+        @include skills_d_c
+        
+      }
+
+      .Coding {
+        
+        float: right;
+        padding: 1.2em;
+        @include skills_d_c
+      }
+      .progress.active .progress-bar {
+
+        @include animation(progress-bar-stripes 3s linear infinite)
+        
+      }
+
+      .progress-title {
+        /*none*/
+        font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        margin: 0 0 20px;
+      }
+
+      .progress {
+        height: 3px;
+        width: 300px;
+        background: #8e44ad;
+        border-radius: 0;
+        margin-bottom: 30px;
+        overflow: visible;
+        box-shadow: none;
+        position: relative;
+      }
+
+      .progress .progress-bar {
+        height: 8px;
+        position: relative;
+        top: -3px;
+        box-shadow: none;
+        @include animation(animate-positive 2s)
+      
+      }
+
+      .progress .progress-value {
+        
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        position: absolute;
+        top: -30px;
+        right: 5px;
+      }
+
+      .progress.pink {
+        background: #d01d4c;
+      }
+      .progress.green {
+        background: #248075;
+      }
+      .progress.purple {
+        background:#6610f2;
+      }
+      .progress.yellow {
+        background: #faa916;
+      }
+      .progress.blue {
+        background: #007bff;
+      }
+      @-webkit-keyframes animate-positive {
+        0% {
+          width: 0%;
+        }
+      }
+
+      @keyframes animate-positive {
+        0% {
+          /* 0%*/
+          width: 100%;
+        }
+      }
+      article {
+        position: absolute;
+        width: 100%;
+        @include backface(hidden);
+        
+        @include transition(all 1s ease-in-out);
+        top: 0;
+      }
+      #tablet {
+        
+        @include transform(rotateY(0deg) scale(1, 1));
+
+      }
+
+      #wifi {
+        @include transform(rotateY(180deg) scale(0, 0));
+      }
+      #tablet.move {
+
+        @include transform(rotateY(-180deg) scale(0, 0));
+      }
+
+      #wifi.move {
+        @include transform(rotateY(0deg) scale(1, 1));
+
+      }
+
+      /*下面是适配*/
+      @media screen and (min-width: 1200px) {
+        .center {
+          width: 1140px;
+        }
+
+        .main {
+          width: 950px;
+          height: auto;
+          padding: .7em;
+          top: 5%;
+          left: 95px;
+        
+
+        }
+        .list li {
+          
+          margin-left: 12px;
+        
+        }
+        .table-b {
+          font-size: 1.3em;
+        }
+        .item__right_title{
+          font-size:1em;
+        }
+      }
+
+      @media screen and (min-width: 1000px) and (max-width: 1199px) {
+        .center {
+          width: 940px;
+        }
+
+        .main {
+          width: 820px;
+          height: auto;
+          top: 4%;
+          left: 7%;
+        }
+
+        .header,
+        .myBasic,
+        .myIntro {
+          width: 770px;
+
+        }
+
+        .outline_right {
+          left: 390px;
+        }
+
+        .skills {
+          width: 720px;
+          margin: 0 auto;
+          margin-top: 880px;
+        }
+
+        .Design,
+        .Coding {
+          width: 320px;
+        }
+        .progress{
+          width:270px;
+        }
+        .progress-title{
+          font-size:14px;
+        }
+
+        .blog_content .item {
+          width: 350px;
+          height: 280px;
+
+        }
+        .list li {
+          
+          margin-left: 12px;
+        
+        }
+
+
+
+      }
+
+      @media screen and (min-width: 960px) and (max-width: 999px) {
+        .center {
+          width: 720px;
+        }
+
+        .main {
+      
+          width: 620px;
+          height: auto;
+          top: 4%;
+          left: 7%;
+        
+        }
+
+
+        .header,
+        .myBasic,
+        .myIntro {
+          width: 570px;
+          height: 220px;
+        }
+
+
+        .myPro {
+          width: 120px;
+          height: 120px;
+          position: absolute;
+          left: 10%;
+          top: 50%;
+          @include transform(translate(-50%, -50%))
+        
+
+        }
+
+        .sub_header {
+          font-size: 0.89em;
+          position: absolute;
+          right: -22%;
+          top: 37%;
+          @include transform(translate(-50%, -50%))
+        
+        }
+
+        .fullname {
+          font-size: 25px;
+          margin-left: .6em;
+        }
+
+        .mytitle {
+          font-size: 17px;
+        }
+
+        #left_top {
+
+          border-top: 155px solid #bfe3e7;
+          border-right: 235px solid transparent;
+        }
+
+        #right_top {
+
+          border-top: 245px solid #bfe3e7;
+          border-left: 445px solid transparent;
+        }
+
+        .table-b {
+          font-size: 1em;
+        }
+
+        .table-b .table_tdA {
+          width: 200px;
+        }
+
+        .outline,
+        .outline_right {
+          width: 330px;
+          margin-left: 6.5em;
+        }
+
+        .outline_right {
+          position: absolute;
+          left: 0;
+          top: 900px;
+        }
+
+        .skills {
+          position: absolute;
+          top: 960px;
+          left: 0;
+        }
+        .Design{
+          margin-left:5.5em;
+        }
+
+        .Coding {
+          position: absolute;
+          top: 400px;
+          margin-left:5.5em;
+
+        }
+
+
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        .center {
+
+          width: 720px;
+        }
+
+        .main {
+          width: 600px;
+          height: auto;
+          margin: 35px auto;
+          position: absolute;
+          left: 60px;
+        
+
+        }
+        
+
+        .header,
+        .myBasic,
+        .myIntro {
+          width: 550px;
+          height: 220px;
+        }
+
+        .myPro {
+          width: 120px;
+          height: 120px;
+          position: absolute;
+          left: 10%;
+          top: 50%;
+          
+          @include transform(translate(-50%, -50%))
+        
+        }
+
+        .sub_header {
+          font-size: 0.89em;
+          position: absolute;
+          right: -22%;
+          top: 40%;
+          @include transform(translate(-50%, -50%))
+        }
+
+        .fullname {
+          font-size: 25px;
+          margin-left: 1.3em;
+        }
+
+        .mytitle {
+          font-size: 17px;
+        }
+
+        #left_top {
+
+          border-top: 125px solid #bfe3e7;
+          border-right: 205px solid transparent;
+        }
+
+        #right_top {
+
+          border-top: 215px solid #bfe3e7;
+          border-left: 415px solid transparent;
+        }
+
+        .table-b {
+          font-size: 1em;
+        }
+
+        .table-b .table_tdA {
+          width: 200px;
+        }
+
+        .outline,
+        .outline_right {
+          width: 330px;
+          margin-left: 6.0em;
+        }
+
+        .outline_right {
+          position: absolute;
+          left: 0;
+          top: 900px;
+        }
+        .skills {
+          width:auto;
+          position: absolute;
+          top: 960px;
+          left: 0;
+        }
+        .Design{
+          margin-left:4.9em;
+        }
+
+        .Coding {
+          position: absolute;
+          top: 400px;
+          margin-left:4.9em;
+
+        }
+
+
+
+
+      }
+
+      @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .center {
+          width: 450px;
+          margin: 30px auto;
+
+        }
+
+        .main {
+          width: 330px;
+          margin-left: -9%;
+          height: auto;
+          
+
+        }
+
+        .header,
+        .myBasic,
+        .myIntro {
+          width: 280px;
+          height: 300px;
+        }
+
+        .myPro {
+          width: 160px;
+          height: 160px;
+          position: absolute;
+          left: 11%;
+          top: 5%;
+
+
+
+        }
+
+        .sub_header {
+          font-size: 0.89em;
+          position: absolute;
+          left: 20%;
+          top: 55%;
+        }
+
+        .fullname {
+          font-size: 25px;
+          margin-left: 1.2em;
+        }
+
+        .mytitle {
+          font-size: 14px;
+        }
+
+
+        #left_top {
+
+          border-top: 85px solid #bfe3e7;
+          border-right: 145px solid transparent;
+        }
+
+        #right_top {
+
+          border-top: 125px solid #bfe3e7;
+          border-left: 215px solid transparent;
+        }
+
+        .table-b {
+          font-size: 0.87em;
+        }
+
+        .table-b .table_tdA {
+          width: 70px;
+        }
+        .outline,
+        .outline_right {
+          width: 330px;
+          margin-left: -1em;
+        }
+
+
+        .outline_right {
+          position: absolute;
+          left: 0;
+          top: 900px;
+        }
+        .outline .education{
+          width:250px;
+          height: 270px;
+        }
+        .item_title{
+          font-size: .7em;
+        }
+        .item_period{
+          font-size:1em ;
+        }
+        .item_description{
+          font-size:11px ;
+        }
+        .timeline_item{
+          overflow: auto;
+        }
+
+        .skills {
+          width:auto;
+          position: absolute;
+          top: 1000px;
+          left: 0;
+          
+          padding:20px;
+        }
+        .Design{
+          width:250px;
+          height:300px;
+          margin-left:1.41em;
+        }
+
+        .Coding {
+          width:250px;
+          height:300px;
+          position: absolute;
+          top: 370px;
+          margin-left:1.41em;
+
+        }
+        .progress{
+          width:200px;
+        }
+        .progress-title { 
+          font-size:12px;
+        }
+        .progress .progress-value
+        {
+          font-size:12px;
+          right: -2.5em;
+        }
+        .coding_skills,.design_skills{
+          font-size: 1.2em;
+        }
+        
+        
+
+      }
+      @media only screen and (min-width: 320px) and (max-width: 479px) {
+        .outline{
+          margin-left: -20%;
+        }
+        .outline .education{
+          width:240px;
+        }
+        .item_title{
+          font-size: .7rem;
+        }
+        .item_description{
+          font-size: .4rem;
+        }
+
+
+        .center {
+          width: 280px;
+          margin-top: -10%;
+          margin-left: -31.5%;
+          height: 500px;
+        }
+        #right_top,#left_top{
+          display: none;
+      }
+      .navbar{
+        margin-bottom: 3%;
+      }
+
+        .header,
+        .myBasic,
+        .myIntro,article {
+          width: 250px;
+          height: 300px;
+          margin: 10% auto;
+        }
+        .main{
+          width:280px;
+          height: auto;
+          margin:20px auto;
+          /*
+          overflow-x: hidden;
+        -ms-overflow-x:hidden;
+        overflow-y: auto;
+        -ms-overflow-y:auto;
+          
+          
+          */
+          overflow: auto;
+          
+          
+        }
+        .myPro{
+          width:110px;
+          height:110px;
+          position: relative;
+          left: 18%;
+          top: 3%;
+        }
+        .fullname {
+          font-size: 25px;
+          margin-left: 2.2em;
+          margin-top:1em;
+      }
+
+        .mytitle {
+          font-size: 14px;
+          margin-left: 2em;
+      }
+      .list{
+        margin-left: 1.1em;
+      }
+      h2,h3{
+        font-size: 1.65rem;
+      }
+      .table-b {
+        font-size: .7em;
+      }
+      table{
+        width:300px;
+      }
+      
+      
+      
+
+      }
+    
+      @media only screen and (min-width: 411px) and (max-width: 414px) {
+      
+      
+        .main{
+          @include main;
+          margin:20px 78px;
+        
+        }
+        
+      
+      
+
+
+      }
+      @media only screen and (min-width: 375px) and (max-width: 410px) {
+      
+        
+        .main{
+          @include main;
+          margin:20px 46px;
+        
+        }
+      
+
+
+      }
+      @media only screen and (min-width: 360px) and (max-width: 374px) {
+        
+        .main{
+          @include main;
+          margin:20px 33px;
+        
+        }
+      
+
+
+      }
+      
+
+      @media only screen and (min-width: 320px) and (max-width: 359px) {
+      
+        .main{
+          @include main;
+          margin:20px auto;
+        
+          
+        }
+      
+
+
+      }
+
+

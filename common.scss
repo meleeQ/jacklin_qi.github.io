@@ -1,0 +1,30 @@
+
+html,span,h1,h2,h3,h4,h5,h6,p,pre,img,ol,li,table,tbody,tr,th,td,article,header,nav,body,img,div{margin:0;padding:0;border:0;}  
+body { background:#fff; color:#000; font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; } 
+h1,h4,h5,h6 {
+	font-weight:100;
+  font-style:normal;
+  font-size:100%;
+}
+ol,li {
+	list-style-type:none;
+}
+a {
+	color:#000;
+	text-decoration:none;
+	outline:0;
+}
+a:hover {
+	text-decoration:none;
+}
+img{border:0;vertical-align:middle}  
+table{border-collapse:collapse;border-spacing:0}  
+p{word-wrap:break-word}
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;} 
+.clearfix { *zoom:1; }
+
+
+
+
+
+
